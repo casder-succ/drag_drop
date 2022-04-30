@@ -22,10 +22,17 @@ const Title = styled.h2`
   border-bottom: 1px solid darkGray;
 `;
 
-const Lane = ({ title }) => (
-  <LaneWrapper>
-    <Title>{title}</Title>
-  </LaneWrapper>
+const Alert = styled.div`
+  text-align: center;
+  font-weight: bolder;
+  padding: 5%;
+`
+
+const Lane = ({title, error, loading, tickets}) => (
+    <LaneWrapper>
+        <Title>{title}</Title>
+        {(loading || error) && <Alert>{loading ? 'Loading...' : error}</Alert>}
+    </LaneWrapper>
 );
 
 export default Lane;
