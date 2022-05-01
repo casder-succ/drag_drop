@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function (Component) {
-    return class extends React.Component {
+export default function WithDataFetch (Component) {
+    class WithDataFetch extends React.Component {
         constructor(props) {
             super(props);
 
@@ -43,4 +43,7 @@ export default function (Component) {
             )
         }
     }
+
+    WithDataFetch.displayName = `WithDataFetch(${Component.name})`;
+    return WithDataFetch;
 }

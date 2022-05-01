@@ -8,7 +8,7 @@ const TicketsWrapper = styled.div`
   justify-content: space-between;
   flex-direction: row;
   margin: 5%;
-  
+
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -22,7 +22,7 @@ const Tickets = ({loading, data, error}) => (
     <TicketsWrapper>
         {(loading || error) && <Alert>{loading ? 'Loading...' :
             error}</Alert>}
-        {data.map(ticket => <Ticket key={ticket.id} ticket={ticket}
+        {data.map(ticket => <Ticket key={ticket.id} ticket={ticket} marginRight
         />)}
     </TicketsWrapper>
 );
