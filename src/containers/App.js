@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 import Board from './Board';
 import Header from '../components/Header/Header';
+import Tickets from "./Tickets";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -27,13 +28,14 @@ class App extends Component {
             {id: 3, title: 'Review'},
             {id: 4, title: 'Done'},
         ];
-        
+
         return (
             <>
                 <GlobalStyle/>
                 <AppWrapper>
                     <Header/>
                     <Board lanes={lanes} dataSource={'assets/data.json'}/>
+                    <Tickets dataSource={'assets/data.json'}/>
                 </AppWrapper>
             </>
         );
