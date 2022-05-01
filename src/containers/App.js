@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import React, {Component} from 'react';
+import styled, {createGlobalStyle} from 'styled-components';
 import Board from './Board';
 import Header from '../components/Header/Header';
 
@@ -8,8 +8,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      sans-serif;
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -20,17 +20,24 @@ const AppWrapper = styled.div`
 `;
 
 class App extends Component {
-  render() {
-    return (
-      <>
-        <GlobalStyle />
-        <AppWrapper>
-          <Header />
-          <Board />
-        </AppWrapper>
-      </>
-    );
-  }
+    render() {
+        const lanes = [
+            {id: 1, title: 'To Do'},
+            {id: 2, title: 'In Progress'},
+            {id: 3, title: 'Review'},
+            {id: 4, title: 'Done'},
+        ];
+        
+        return (
+            <>
+                <GlobalStyle/>
+                <AppWrapper>
+                    <Header/>
+                    <Board lanes={lanes} dataSource={'assets/data.json'}/>
+                </AppWrapper>
+            </>
+        );
+    }
 }
 
 export default App;
