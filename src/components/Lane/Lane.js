@@ -33,9 +33,10 @@ const TicketsWrapper = styled.div`
   padding: 5%;
 `;
 
-const Lane = ({title, error, loading, tickets, onDragStart, onDragOver}) => (
+const Lane = ({title, error, loading, tickets, onDragStart, onDragOver, onDrop, laneId}) => (
     <LaneWrapper
         onDragOver={onDragOver}
+        onDrop={(e) => onDrop(e, laneId)}
     >
         <Title>{title}</Title>
         {(loading || error) && <Alert>{loading ? 'Loading...' : error}</Alert>}
