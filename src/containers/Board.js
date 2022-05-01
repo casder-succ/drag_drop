@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Lane from '../components/Lane/Lane';
-import WithDataFetch from "../WithDataFetch";
-import tickets from "./Tickets";
-import ticket from "../components/Ticket/Ticket";
+import WithDataFetch from "../WithDataFetch";   
 
 const BoardWrapper = styled.div`
   display: flex;
