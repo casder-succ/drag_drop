@@ -34,6 +34,10 @@ class Board extends React.Component {
         e.dataTransfer.setData('id', id);
     }
 
+    onDragOver(e) {
+        e.preventDefault();
+    }
+
     render() {
         const {lanes, error, loading} = this.props;
 
@@ -45,6 +49,7 @@ class Board extends React.Component {
                           loading={loading}
                           error={error}
                           onDragStart={this.onDragStart}
+                          onDragOver={this.onDragOver}
                     />
                 ))}
             </BoardWrapper>
